@@ -1,0 +1,11 @@
+<h1>Wikinimous</h1>
+
+<%= link_to "Add a new article", new_article_path %>
+
+<% @articles.each do |article| %>
+  <h3><%= link_to article.title, article_path(article) %></h3>
+  <p><%= article.content %></p>
+  <p><%= link_to "Edit this article", edit_article_path(article) %></p>
+  <%= link_to "Delete this article", article_path(article), method: :delete %>
+<% end %>
+
